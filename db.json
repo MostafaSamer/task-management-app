@@ -1,0 +1,17 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Mostafa",
+            "username": "mostafa"
+        }
+    ],
+    "tasks": [
+        {
+            "id": 1,
+            "title": "Finish this task",
+            "completed": false,
+            "userId": 1
+        }
+    ]
+}
