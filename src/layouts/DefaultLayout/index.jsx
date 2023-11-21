@@ -1,8 +1,8 @@
-import './index.scss';
+import styles from './index.module.scss';
 
 const DefaultLayout = ({ children }) => {
   return (
-    <div className="site-layout">{children}</div>
+    <div className={styles.siteLayout}>{children}</div>
   );
 };
 
