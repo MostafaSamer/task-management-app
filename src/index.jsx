@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import Router from './router';
 
+import './index.scss';
+
 const Root = () => {
    return <React.StrictMode>
       <BrowserRouter>
