@@ -3,7 +3,9 @@
         {
             "id": 1,
             "name": "Mostafa",
-            "username": "mostafa"
+            "username": "mostafa",
+            "email": "mostafasamer1999@hotmail.com",
+            "password": "Password"
         }
     ],
     "tasks": [

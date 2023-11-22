@@ -1,0 +1,25 @@
+@import 'theme/colors.scss';
+
+.cardWrapper {
+    .card {
+        background-color: $color-white;
+        border: 1px solid $color-secondary-500;
+        border-radius: 8px;
+        margin: 16px;
+        overflow: hidden;
+
+        .title {
+            text-align: center;
+            font-size: 20px;
+            color: $color-primary;
+            padding: 16px;
+            background-color: $color-background;
+            font-weight: bold;
+        }
+
+        .content {
+            color: $color-black;
+            padding: 16px;
+        }
+    }
+}
