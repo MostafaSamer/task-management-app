@@ -1,0 +1,14 @@
+@import 'theme/colors.scss';
+@import 'theme/breakpoints.scss';
+
+.signUpWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    .signUp {
+        min-width: 300px;
+        width: 45%;
+    }
+}
