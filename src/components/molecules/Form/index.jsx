@@ -3,7 +3,7 @@ import styles from "./index.module.scss"
 import { Fragment, useState } from "react"
 import CtaButton from "components/atoms/CtaButton"
 
-const Form = ({ formFields, onSubmit }) => {
+const Form = ({ actionsText, fields, onSubmit }) => {
 
     const [formData, setFormData] = useState({})
 
@@ -35,9 +35,9 @@ const Form = ({ formFields, onSubmit }) => {
     return (
         <div className={styles.formWrapper}>
             <form className={styles.form} onSubmit={handleSubmit}>
-                {formFields.map((field, index) => <Fragment key={index}>{renderInput(field)}</Fragment>)}
+                {fields.map((field, index) => <Fragment key={index}>{renderInput(field)}</Fragment>)}
                 <div className={styles.actions}>
-                    <CtaButton text="Submit" onClick={handleSubmit} style="primary" />
+                    <CtaButton text={actionsText} onClick={handleSubmit} style="primary" />
                 </div>
             </form>
         </div>
