@@ -1,13 +1,15 @@
 import Input from "components/atoms/input"
 import styles from "./index.module.scss"
 import { Fragment, useState } from "react"
+import CtaButton from "components/atoms/CtaButton"
 
 const Form = ({ formFields, onSubmit }) => {
 
     const [formData, setFormData] = useState({})
 
-    const handleSubmit = () => {
-        console.log("Call onSubmit()...")
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Call onSubmit()...", formData)
     }
 
     const handleChange = (label, value) => {
@@ -34,6 +36,9 @@ const Form = ({ formFields, onSubmit }) => {
         <div className={styles.formWrapper}>
             <form className={styles.form} onSubmit={handleSubmit}>
                 {formFields.map((field, index) => <Fragment key={index}>{renderInput(field)}</Fragment>)}
+                <div className={styles.actions}>
+                    <CtaButton text="Submit" onClick={handleSubmit} style="primary" />
+                </div>
             </form>
         </div>
     )
