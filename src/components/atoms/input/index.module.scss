@@ -1,0 +1,20 @@
+@import 'theme/colors.scss';
+@import 'theme/breakpoints.scss';
+
+.inputWraper {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+
+    label {
+        font-size: 1.1rem;
+    }
+    
+    input {
+        font-size: 1.1rem;
+        padding: 5px;
+        margin: 5px 0px;
+        border-radius: 5px;
+        border: 1px solid $color-secondary-500;
+    }
+}

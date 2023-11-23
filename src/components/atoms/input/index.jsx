@@ -7,51 +7,49 @@ const Input = ({ label, type, value, onChange, ...props }) => {
     }
 
     const renderTextInput = () => <>
-        <div>
-            <label htmlFor="name">{label}:</label>
-            <input
-                type="text"
-                id="name"
-                name="name"
-                value={value}
-                onChange={handleChange}
-            />
-            {/* <span className="error">{errors.name}</span> */}
-        </div>
+        <label htmlFor="name">{label}:</label>
+        <input
+            type="text"
+            id="name"
+            name="name"
+            value={value}
+            onChange={handleChange}
+        />
+        {/* <span className="error">{errors.name}</span> */}
     </>
 
     const renderEmailInput = () => <>
-        <div>
-            <label>{label}:</label>
-            <input
-                type="email"
-                name="email"
-                value={value}
-                onChange={handleChange}
-            />
-            {/* <span className="error">{errors.email}</span> */}
-        </div>
+        <label>{label}:</label>
+        <input
+            type="email"
+            name="email"
+            value={value}
+            onChange={handleChange}
+        />
+        {/* <span className="error">{errors.email}</span> */}
     </>
 
     const renderPasswordInput = () => <>
-        <div>
-            <label htmlFor="password">{label}:</label>
-            <input
-                type="password"
-                id="password"
-                name="password"
-                value={value}
-                onChange={handleChange}
-            />
-            {/* <span className="error">{errors.password}</span> */}
-        </div>
+        <label htmlFor="password">{label}:</label>
+        <input
+            type="password"
+            id="password"
+            name="password"
+            value={value}
+            onChange={handleChange}
+        />
+        {/* <span className="error">{errors.password}</span> */}
     </>
 
-    switch (type) {
-        case "email": return renderEmailInput(); break;
-        case "password": return renderPasswordInput(); break;
-        default: return renderTextInput();
+    const renderInput = () => {
+        switch (type) {
+            case "email": return renderEmailInput(); break;
+            case "password": return renderPasswordInput(); break;
+            default: return renderTextInput();
+        }
     }
+
+    return <div className={styles.inputWraper}>{renderInput()}</div>
 }
 
 export default Input

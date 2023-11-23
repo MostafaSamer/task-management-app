@@ -1,17 +1,17 @@
 export default [
     {
         name: "name",
-        label: "name",
+        label: "Name",
         type: "text"
     },
     {
         name: "email",
-        label: "email",
+        label: "Email",
         type: "email"
     },
     {
         name: "password",
-        label: "password",
+        label: "Password",
         type: "password"
     },
 ]
