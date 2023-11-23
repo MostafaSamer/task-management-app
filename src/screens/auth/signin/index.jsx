@@ -8,7 +8,10 @@ const SignIn = () => {
         <div className={styles.signInWrapper}>
             <div className={styles.signIn}>
                 <Card title={signInForm.title}>
-                    <Form actionsText={signInForm.actionsText} fields={signInForm.fields} />
+                    <Form
+                        actionsText={signInForm.actionsText}
+                        link={signInForm.link}
+                        fields={signInForm.fields} />
                 </Card>
             </div>
         </div>

@@ -1,6 +1,10 @@
 export default {
     title: "Sign in",
     actionsText: "Login",
+    link: {
+        text: "Create and account",
+        ref: "/signup"
+    },
     fields: [
         {
             name: "email",
