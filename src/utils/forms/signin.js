@@ -2,7 +2,7 @@ export default {
     title: "Sign in",
     actionsText: "Login",
     link: {
-        text: "Create and account",
+        text: "Don’t have an account? Sign up",
         ref: "/signup"
     },
     fields: [

@@ -2,7 +2,7 @@ export default {
     title: "Create new account",
     actionsText: "Sign up",
     link: {
-        text: "Already have an acount",
+        text: "Already have an acount? Sign in",
         ref: "/signin"
     },
     fields: [

@@ -8,7 +8,12 @@
     min-height: 100vh;
 
     .signUp {
-        min-width: 300px;
+        min-width: 450px;
         width: 45%;
+        
+        @media (max-width: $sm) {
+            min-width: 300px;
+            
+        }
     }
 }

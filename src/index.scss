@@ -18,4 +18,10 @@ body {
 
 button {
   font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: $color-primary;
 }

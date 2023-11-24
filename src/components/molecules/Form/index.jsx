@@ -2,9 +2,11 @@ import Input from "components/atoms/input"
 import styles from "./index.module.scss"
 import { Fragment, useState } from "react"
 import CtaButton from "components/atoms/CtaButton"
+import { useHistory } from 'react-router-dom';
 
 const Form = ({ actionsText, link, fields, onSubmit }) => {
 
+    const history = useHistory();
     const [formData, setFormData] = useState({})
 
     const handleSubmit = (e) => {
@@ -20,6 +22,8 @@ const Form = ({ actionsText, link, fields, onSubmit }) => {
             }
         })
     }
+
+    const redirect = (path) => { history.push(path) }
 
     const renderInput = (field) => <>
     <div className={styles.inputWrapper}>
@@ -37,9 +41,9 @@ const Form = ({ actionsText, link, fields, onSubmit }) => {
             <form className={styles.form} onSubmit={handleSubmit}>
                 {fields.map((field, index) => <Fragment key={index}>{renderInput(field)}</Fragment>)}
                 <div className={styles.link}>
-                    <a href={link.ref}>
+                    <span onClick={() => {redirect(link.ref)}}>
                         {link.text}
-                    </a>
+                    </span>
                 </div>
                 <div className={styles.actions}>
                     <CtaButton text={actionsText} onClick={handleSubmit} style="primary" />
