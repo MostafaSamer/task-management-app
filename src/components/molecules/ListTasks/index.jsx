@@ -5,6 +5,7 @@ import Tasks from "redux/tasks";
 import { useEffect } from "react";
 import Task from "components/atoms/Task";
 import Users from "redux/users";
+import EmptyList from "components/atoms/EmptyList";
 
 const ListTasks = () => {
 
@@ -17,17 +18,17 @@ const ListTasks = () => {
     }, [dispatch]);
 
     const renderTasks = () => {
-        return tasks ? tasks.map((task) => (
+        return tasks.length ? tasks.map((task) => (
             <div key={task.id} className={styles.taskItem}>
                 <Task task={task} />
             </div>
-        )) : "";
+        )) : <EmptyList />
     };
-    
+
 
     return (
         <div className={styles.listTasksWrapper}>
-            <div className={styles.listTasks}>{renderTasks()}</div>
+            <div className={styles.listTasks}>{tasks != undefined && renderTasks()}</div>
         </div>
     )
 };

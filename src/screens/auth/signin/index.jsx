@@ -15,7 +15,8 @@ const SignIn = () => {
     const messages = useSelector(User.selectors.getMessages);
 
     const handleSignIn = (values) => {
-        dispatch(User.thunks.signIn(values)).then((res) => {
+        dispatch(User.thunks.signIn(values))
+        .then((res) => {
             if (!res.error) redirect("/")
         });
     }
