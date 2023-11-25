@@ -14,7 +14,7 @@ const AddTask = () => {
 
     const addTask = (e) => {
         e.preventDefault();
-        if(value === "") return;
+        if(value.replaceAll(" ", "") === "") return;
         dispatch(Tasks.thunks.createTask({
             title: value,
             userId: user.id
