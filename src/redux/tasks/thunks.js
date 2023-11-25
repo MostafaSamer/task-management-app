@@ -51,3 +51,13 @@ export const markTask = createAsyncThunk('tasks/markTask', async (data, thunkAPI
     return thunkAPI.rejectWithValue(error.data);
   }
 });
+
+export const updateTask = createAsyncThunk('tasks/updateTask', async (data, thunkAPI) => {
+  try {
+    const {id, task} = data;
+    const response = await TasksAPI.updateTask(id, task);
+    return { data: response.data };
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.data);
+  }
+});
