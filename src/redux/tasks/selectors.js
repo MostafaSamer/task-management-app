@@ -1,5 +1,6 @@
-import adapter from './adapter';
+import { createSelector } from "@reduxjs/toolkit";
 
-export const tasksSelectors = {
-  ...adapter.getSelectors((state) => state.tasks),
-};
+export const getTasks = createSelector(
+  (state) => state.tasks,
+  (tasks) => tasks.tasks,
+);

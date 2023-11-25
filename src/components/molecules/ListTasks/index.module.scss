@@ -1,0 +1,16 @@
+@import 'theme/colors.scss';
+@import 'theme/breakpoints.scss';
+
+.listTasksWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
+    .listTasks {
+        min-width: 250px;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+    }
+}

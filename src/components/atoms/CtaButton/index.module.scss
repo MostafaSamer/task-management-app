@@ -12,6 +12,11 @@
         color: $color-white;
     }
 
+    .danger {
+        background-color: $color-error;
+        color: $color-white;
+    }
+
     .button {
         padding: 10px 30px;
         border: none;

@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import adapter from './adapter';
 import * as thunks from './thunks';
 import * as selectors from './selectors';
-import { getTask, getAllTasks } from './thunks';
+import { getTask, getAllTasks, createTask, deleteTask } from './thunks';
 
 export const slice = createSlice({
   name: 'tasks',
@@ -15,10 +15,19 @@ export const slice = createSlice({
       adapter.setOne(state, data.task);
     });
     builder.addCase(getAllTasks.fulfilled, (state, action) => {
-      const { payload, meta } = action;
-      const { data } = payload;
-      if (!data.tasks) return;
-      adapter.setAll(state, data.tasks);
+      const { payload } = action;
+      if (!payload.data) return;
+      state.tasks = payload.data;
+      adapter.setAll(state, payload.data);
+    });
+    builder.addCase(createTask.fulfilled, (state, action) => {
+      const { payload } = action;
+      if (!payload.data) return;
+      state.tasks.push(payload.data);
+    });
+    builder.addCase(deleteTask.fulfilled, (state, action) => {
+      const { payload } = action;
+      state.tasks = state.tasks.filter(t => t.id !== payload.data);
     });
   },
 });

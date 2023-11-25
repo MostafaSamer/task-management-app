@@ -19,7 +19,7 @@ export const getAllTasks = createAsyncThunk('tasks/getAllTasks', async (params, 
   }
 });
 
-export const createTask = createAsyncThunk('tasks/getAllTasks', async (data, thunkAPI) => {
+export const createTask = createAsyncThunk('tasks/createTask', async (data, thunkAPI) => {
   try {
     const params = {
       title: data,
@@ -28,6 +28,15 @@ export const createTask = createAsyncThunk('tasks/getAllTasks', async (data, thu
     }
     const response = await TasksAPI.createTask(params);
     return { data: response.data };
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.data);
+  }
+});
+
+export const deleteTask = createAsyncThunk('tasks/deleteTask', async (id, thunkAPI) => {
+  try {
+    const response = await TasksAPI.deleteTask(id);
+    return { data: id };
   } catch (error) {
     return thunkAPI.rejectWithValue(error.data);
   }
