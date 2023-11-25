@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-const Input = ({ accessor, label, type, value, onChange, customStyle, inline, options, ...props }) => {
+const Input = ({ accessor, label, type, value, onChange, customStyle, inline, options, errors, ...props }) => {
 
     const handleChange = (value) => {
         onChange(accessor, value)
@@ -15,7 +15,6 @@ const Input = ({ accessor, label, type, value, onChange, customStyle, inline, op
             style={customStyle}
             onChange={handleChange}
         />
-        {/* <span className="error">{errors.name}</span> */}
     </>
 
     const renderEmailInput = () => <>
@@ -27,7 +26,6 @@ const Input = ({ accessor, label, type, value, onChange, customStyle, inline, op
             style={customStyle}
             onChange={handleChange}
         />
-        {/* <span className="error">{errors.email}</span> */}
     </>
 
     const renderPasswordInput = () => <>
@@ -39,7 +37,6 @@ const Input = ({ accessor, label, type, value, onChange, customStyle, inline, op
             style={customStyle}
             onChange={handleChange}
         />
-        {/* <span className="error">{errors.password}</span> */}
     </>
 
     const renderCheckInput = () => <>
@@ -51,7 +48,6 @@ const Input = ({ accessor, label, type, value, onChange, customStyle, inline, op
             style={customStyle}
             onChange={handleChange}
         />
-        {/* <span className="error">{errors.password}</span> */}
     </>
 
     const renderDropdownInput = () => (
@@ -80,7 +76,10 @@ const Input = ({ accessor, label, type, value, onChange, customStyle, inline, op
         }
     }
 
-    return <div className={styles.inputWraper}>{renderInput()}</div>
+    return <div className={styles.inputWraper}>
+        {renderInput()}
+        {errors && <span className={styles.error}>{errors}</span>}
+    </div>
 }
 
 export default Input

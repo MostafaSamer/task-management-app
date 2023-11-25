@@ -1,3 +1,5 @@
+import { emailValidation, passwordValidation } from "./validation";
+
 export default {
     title: "Sign in",
     actionsText: "Login",
@@ -9,12 +11,20 @@ export default {
         {
             accessor: "email",
             label: "Email",
-            type: "email"
+            type: "email",
+            validation: {
+                check: emailValidation,
+                message: "Email is not valid"
+            }
         },
         {
             accessor: "password",
             label: "Password",
-            type: "password"
+            type: "password",
+            validation: {
+                check: passwordValidation,
+                message: "Password must be more than 6 character"
+            }
         },
     ]
 }
