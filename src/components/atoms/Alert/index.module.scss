@@ -1,0 +1,19 @@
+@import 'theme/colors.scss';
+@import 'theme/breakpoints.scss';
+
+.alertWrapper {
+    .alert {
+        padding: 20px 10px;
+        border-radius: 4px;
+    }
+
+    .success {
+        background-color: rgba($color-success, 0.5);
+        color: $color-black;
+    }
+
+    .error {
+        background-color: rgba($color-error, 0.5);
+        color: $color-black;
+    }
+}

@@ -16,6 +16,9 @@ export const slice = createSlice({
     currentUser: loadFromLocalStorage('user'),
   }),
   reducers: {
+    clearErrorMessage(state) {
+      state.messages = [];
+    },
     logout(state) {
       state.currentUser = undefined;
       clearLocalStorage();
@@ -27,17 +30,16 @@ export const slice = createSlice({
         Get the authHeaders from API
         addToLocalStorage('authHeaders', authHeaders);
         */
-     debugger
       const { payload } = action;
       const { data } = payload;
       if (!data.user) return;
       state.currentUser = data.user;
+      state.messages = [];
       addToLocalStorage('user', data.user);
     });
     
-    builder.addCase(signIn.rejected, (state) => {
-      debugger
-      state.messages = [];
+    builder.addCase(signIn.rejected, (state, action) => {
+      state.messages.push(action.payload);
     });
   }
 
