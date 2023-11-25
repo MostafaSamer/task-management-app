@@ -1,5 +1,15 @@
-.TaskWrapper {
+.taskWrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    .task {
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+    }
+
+    .completed {
+        text-decoration: line-through;
+    }
 }

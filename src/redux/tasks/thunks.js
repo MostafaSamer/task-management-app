@@ -41,3 +41,13 @@ export const deleteTask = createAsyncThunk('tasks/deleteTask', async (id, thunkA
     return thunkAPI.rejectWithValue(error.data);
   }
 });
+
+export const markTask = createAsyncThunk('tasks/markTask', async (data, thunkAPI) => {
+  try {
+    const {id, task} = data;
+    const response = await TasksAPI.updateTask(id, task);
+    return { data: response.data };
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.data);
+  }
+});

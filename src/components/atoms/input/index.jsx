@@ -42,10 +42,23 @@ const Input = ({ accessor, label, type, value, onChange, customStyle, ...props }
         {/* <span className="error">{errors.password}</span> */}
     </>
 
+    const renderCheckInput = () => <>
+        {label && <label>{label}:</label>}
+        <input
+            type="checkbox"
+            name={accessor}
+            checked={value}
+            style={customStyle}
+            onChange={handleChange}
+        />
+        {/* <span className="error">{errors.password}</span> */}
+    </>
+
     const renderInput = () => {
         switch (type) {
             case "email": return renderEmailInput(); break;
             case "password": return renderPasswordInput(); break;
+            case "checkbox": return renderCheckInput(); break;
             default: return renderTextInput();
         }
     }
