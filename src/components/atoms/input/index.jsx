@@ -1,41 +1,42 @@
 import styles from './index.module.scss';
 
-const Input = ({ accessor, label, type, value, onChange, ...props }) => {
+const Input = ({ accessor, label, type, value, onChange, customStyle, ...props }) => {
 
     const handleChange = (value) => {
         onChange(accessor, value)
     }
 
     const renderTextInput = () => <>
-        <label htmlFor="name">{label}:</label>
+        {label && <label>{label}:</label>}
         <input
             type="text"
-            id="name"
-            name="name"
+            name={accessor}
             value={value}
+            style={customStyle}
             onChange={handleChange}
         />
         {/* <span className="error">{errors.name}</span> */}
     </>
 
     const renderEmailInput = () => <>
-        <label>{label}:</label>
+        {label && <label>{label}:</label>}
         <input
             type="email"
-            name="email"
+            name={accessor}
             value={value}
+            style={customStyle}
             onChange={handleChange}
         />
         {/* <span className="error">{errors.email}</span> */}
     </>
 
     const renderPasswordInput = () => <>
-        <label htmlFor="password">{label}:</label>
+        {label && <label>{label}:</label>}
         <input
             type="password"
-            id="password"
-            name="password"
+            name={accessor}
             value={value}
+            style={customStyle}
             onChange={handleChange}
         />
         {/* <span className="error">{errors.password}</span> */}

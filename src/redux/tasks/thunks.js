@@ -18,3 +18,17 @@ export const getAllTasks = createAsyncThunk('tasks/getAllTasks', async (params, 
     return thunkAPI.rejectWithValue(error.data);
   }
 });
+
+export const createTask = createAsyncThunk('tasks/getAllTasks', async (data, thunkAPI) => {
+  try {
+    const params = {
+      title: data,
+      completed: false,
+      userId: 1
+    }
+    const response = await TasksAPI.createTask(params);
+    return { data: response.data };
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.data);
+  }
+});

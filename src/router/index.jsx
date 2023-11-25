@@ -4,8 +4,7 @@ import UserRoute from 'router/user';
 
 import SignUp from 'screens/auth/signup';
 import SignIn from 'screens/auth/signin';
-
-const HomeTemp = () => <h1>Home</h1>
+import Home from 'screens/user/home';
 
 const Router = () => {
 
@@ -16,7 +15,7 @@ const Router = () => {
                     <AuthRoute exact path="/signup" component={SignUp} />
                     <AuthRoute exact path="/signin" component={SignIn} />
 
-                    <UserRoute exact path="/" component={HomeTemp} />
+                    <UserRoute exact path="/" component={Home} />
                 </Switch>
             )}
         />
