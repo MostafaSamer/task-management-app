@@ -11,14 +11,14 @@ const Form = ({ actionsText, link, fields, onSubmit }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Call onSubmit()...", formData)
+        onSubmit(formData);
     }
 
-    const handleChange = (label, value) => {
+    const handleChange = (accessor, value) => {
         setFormData((prevData) => {
             return {
                 ...prevData,
-                [label]: value.target.value
+                [accessor]: value.target.value
             }
         })
     }
@@ -28,7 +28,7 @@ const Form = ({ actionsText, link, fields, onSubmit }) => {
     const renderInput = (field) => <>
     <div className={styles.inputWrapper}>
         <Input
-        name={field.name}
+        accessor={field.accessor}
         label={field.label}
         type={field.type}
         value={formData[field.label]}

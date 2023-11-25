@@ -1,8 +1,13 @@
+import axios from "utils/requestHelper";
+
+const get = (id) => axios.post(`/sponsors/${id}`);
+const getAll = () => axios.get(`/users`);
+const create = (data) => axios.post(`/users`, data);
+
 const UserAPI = {
-  /*
-    Add Sign in and Register and any
-    user API calls
-  */
+  get,
+  getAll,
+  create
 };
 
 export default UserAPI;

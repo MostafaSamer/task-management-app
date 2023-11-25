@@ -1,9 +1,9 @@
 import styles from './index.module.scss';
 
-const Input = ({ label, type, value, onChange, ...props }) => {
+const Input = ({ accessor, label, type, value, onChange, ...props }) => {
 
     const handleChange = (value) => {
-        onChange(label, value)
+        onChange(accessor, value)
     }
 
     const renderTextInput = () => <>

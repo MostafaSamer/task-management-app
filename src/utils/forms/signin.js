@@ -7,12 +7,12 @@ export default {
     },
     fields: [
         {
-            name: "email",
+            accessor: "email",
             label: "Email",
             type: "email"
         },
         {
-            name: "password",
+            accessor: "password",
             label: "Password",
             type: "password"
         },
