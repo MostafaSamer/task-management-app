@@ -14,7 +14,7 @@ const ListTasks = () => {
     const user = useSelector(Users.selectors.getCurrentUser)
 
     useEffect(() => {
-        dispatch(Tasks.thunks.getAllTasks({ userId: user.id }));
+        if(user) dispatch(Tasks.thunks.getAllTasks({ userId: user.id }));
     }, []);
 
     const renderTasks = () => {
