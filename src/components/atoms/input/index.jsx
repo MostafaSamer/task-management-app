@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-const Input = ({ accessor, label, type, value, onChange, customStyle, ...props }) => {
+const Input = ({ accessor, label, type, value, onChange, customStyle, options, ...props }) => {
 
     const handleChange = (value) => {
         onChange(accessor, value)
@@ -54,11 +54,28 @@ const Input = ({ accessor, label, type, value, onChange, customStyle, ...props }
         {/* <span className="error">{errors.password}</span> */}
     </>
 
+    const renderDropdownInput = () => (
+        <>
+            {label && <label>{label}:</label>}
+            <select
+                name={accessor}
+                value={value}
+                style={customStyle}
+                onChange={(e) => handleChange(e.target.value)}
+            >
+                {options.map((option) => (
+                    <option key={option.value} value={option.value}>{option.label}</option>
+                ))}
+            </select>
+        </>
+    );
+
     const renderInput = () => {
         switch (type) {
             case "email": return renderEmailInput(); break;
             case "password": return renderPasswordInput(); break;
             case "checkbox": return renderCheckInput(); break;
+            case "dropdown": return renderDropdownInput(); break;
             default: return renderTextInput();
         }
     }
