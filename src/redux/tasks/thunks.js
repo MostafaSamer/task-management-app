@@ -22,9 +22,9 @@ export const getAllTasks = createAsyncThunk('tasks/getAllTasks', async (params, 
 export const createTask = createAsyncThunk('tasks/createTask', async (data, thunkAPI) => {
   try {
     const params = {
-      title: data,
+      title: data.title,
       completed: false,
-      userId: 1
+      userId: data.userId
     }
     const response = await TasksAPI.createTask(params);
     return { data: response.data };
