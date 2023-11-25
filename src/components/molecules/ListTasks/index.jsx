@@ -4,14 +4,16 @@ import styles from "./index.module.scss"
 import Tasks from "redux/tasks";
 import { useEffect } from "react";
 import Task from "components/atoms/Task";
+import Users from "redux/users";
 
 const ListTasks = () => {
 
     const dispatch = useDispatch();
     const tasks = useSelector(Tasks.selectors.getTasks);
+    const user = useSelector(Users.selectors.getCurrentUser)
 
     useEffect(() => {
-        dispatch(Tasks.thunks.getAllTasks());
+        dispatch(Tasks.thunks.getAllTasks({ userId: user.id }));
     }, [dispatch]);
 
     const renderTasks = () => {

@@ -2,7 +2,7 @@ import axios from '../../utils/requestHelper';
 
 const getTask = (id) => axios.get(`/tasks/${id}`);
 
-const getAllTasks = () => axios.get(`/tasks`);
+const getAllTasks = (params) => axios.get(`/tasks?${new URLSearchParams(params).toString()}`);
 
 const createTask = (data) => axios.post(`/tasks`, data);
 

@@ -40,11 +40,11 @@ export const slice = createSlice({
     });
     
     builder.addCase(signIn.rejected, (state, action) => {
-      state.messages.push(action.payload);
+      state.messages = [action.payload];
     });
     
     builder.addCase(signUp.rejected, (state, action) => {
-      state.messages.push(action.payload);
+      state.messages = [action.payload];
     });
   }
 
