@@ -1,0 +1,25 @@
+@import 'theme/colors.scss';
+@import 'theme/breakpoints.scss';
+
+.footerWrapper {
+    background-color: $color-secondary;
+    position: absolute;
+    margin-top: 50px;
+    bottom: 0;
+    width: 100%;
+    // margin-bottom: -100;
+
+    .footer {
+        display: flex;
+        justify-content: center;
+        padding: 18px;
+        p {
+            color: $color-white;
+            margin: 0px;
+            a {
+                color: $color-white;
+                text-decoration: underline;
+            }
+        }
+    }
+}
