@@ -17,7 +17,7 @@ const Header = () => {
                 <h1>Task Management System</h1>
             </div>
             <div className={styles.headerRight}>
-                <p>{user.name}</p>
+                <p>{user?.name}</p>
                 <CtaButton
                     onClick={handleLogOut}
                     style={"danger"}
