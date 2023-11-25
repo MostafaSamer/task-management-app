@@ -15,7 +15,7 @@ const ListTasks = () => {
 
     useEffect(() => {
         dispatch(Tasks.thunks.getAllTasks({ userId: user.id }));
-    }, [dispatch]);
+    }, []);
 
     const renderTasks = () => {
         return tasks.length ? tasks.map((task) => (

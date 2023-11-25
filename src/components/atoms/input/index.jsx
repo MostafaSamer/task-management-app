@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-const Input = ({ accessor, label, type, value, onChange, customStyle, options, ...props }) => {
+const Input = ({ accessor, label, type, value, onChange, customStyle, inline, options, ...props }) => {
 
     const handleChange = (value) => {
         onChange(accessor, value)

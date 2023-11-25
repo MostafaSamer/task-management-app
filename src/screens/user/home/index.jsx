@@ -10,8 +10,8 @@ const Home = () => {
     return (
         <div className={styles.homeWrapper}>
             <Header />
-            <FilterTasks />
             <AddTask />
+            <FilterTasks />
             <ListTasks />
             <Footer />
         </div>

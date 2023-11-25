@@ -1,0 +1,20 @@
+@import 'theme/colors.scss';
+@import 'theme/breakpoints.scss';
+
+.filterWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+    .filter {
+        display: flex;
+        justify-content: end;
+        width: 40%;
+        min-width: 600px;
+        
+        @media (max-width: $md) {
+            justify-content: center;
+            min-width: 350px;
+        }
+    }
+}
