@@ -22,7 +22,7 @@ export const signIn = createAsyncThunk('users/signIn', async (data, { rejectWith
 
 export const signUp = createAsyncThunk('users/signUp', async (data, thunkAPI) => {
   try {
-    const response = await UsersAPI.getAll();
+    const response = await UsersAPI.create(data);
     return { data: response.data };
   } catch (error) {
     return thunkAPI.rejectWithValue(error);

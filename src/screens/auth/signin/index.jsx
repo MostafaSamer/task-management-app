@@ -6,7 +6,7 @@ import User from 'redux/users';
 import { useDispatch, useSelector } from "react-redux"
 import Alert from "components/atoms/Alert";
 import { useEffect } from "react";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from 'react-router-dom';
 
 const SignIn = () => {
 

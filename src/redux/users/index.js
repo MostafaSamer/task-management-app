@@ -5,6 +5,7 @@ import * as thunks from './thunks';
 
 import {
   signIn,
+  signUp
 } from './thunks';
 
 import { addToLocalStorage, loadFromLocalStorage, clearLocalStorage } from 'utils/localStorageHelpers';
@@ -39,6 +40,10 @@ export const slice = createSlice({
     });
     
     builder.addCase(signIn.rejected, (state, action) => {
+      state.messages.push(action.payload);
+    });
+    
+    builder.addCase(signUp.rejected, (state, action) => {
       state.messages.push(action.payload);
     });
   }
