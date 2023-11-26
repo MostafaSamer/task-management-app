@@ -22,8 +22,8 @@ const AddTask = () => {
         setValue("");
     }
 
-    const handleChange = (accessor, e) => {
-        setValue(e.target.value);
+    const handleChange = (accessor, value) => {
+        setValue(value);
     }
 
     return (

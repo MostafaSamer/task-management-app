@@ -7,7 +7,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
-      - "6006:6006"
     volumes:
       - ./src:/usr/src/app/src  # If you want to mount your source code for development
   json-server:
@@ -24,3 +23,5 @@ services:
       dockerfile: DockerfileStory
     ports:
       - "6000:6000"
+    volumes:
+      - ./src:/usr/src/app/src

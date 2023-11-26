@@ -44,7 +44,7 @@ const Task = ({ task }) => {
     const renderTask = () => editMode ?
         <Input
             accessor={"editTask"}
-            onChange={(accessor, e) => setEditTitle(e.target.value) }
+            onChange={(accessor, value) => setEditTitle(value) }
             value={editTitle}
         /> :
         <p className={task.completed ? `${styles.completed}` : ""}>{task.title}</p>

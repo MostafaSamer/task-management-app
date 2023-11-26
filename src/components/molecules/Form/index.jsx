@@ -31,8 +31,7 @@ const Form = ({ actionsText, link, fields, onSubmit }) => {
         return Object.keys(err).length === 0
     }
 
-    const handleChange = (accessor, e) => {
-        let value = e.target.value
+    const handleChange = (accessor, value) => {
         setFormData((prevData) => {
             return {
                 ...prevData,

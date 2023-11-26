@@ -2,14 +2,18 @@ import styles from './index.module.scss';
 
 const Input = ({ accessor, label, type, value, onChange, customStyle, inline = false, options, errors, ...props }) => {
 
-    const handleChange = (value) => {
-        onChange(accessor, value)
+    const inputId = `${accessor}-input`;
+
+    const handleChange = (e) => {
+        onChange(accessor, e.target.value)
     }
 
     const renderTextInput = () => <>
-        {label && <label>{label}:</label>}
+        {label && <label htmlFor={inputId}>{label}:</label>}
         <input
             type="text"
+            id={inputId}
+            data-testid={inputId}
             name={accessor}
             value={value}
             style={customStyle}
@@ -18,9 +22,11 @@ const Input = ({ accessor, label, type, value, onChange, customStyle, inline = f
     </>
 
     const renderEmailInput = () => <>
-        {label && <label>{label}:</label>}
+        {label && <label htmlFor={inputId}>{label}:</label>}
         <input
             type="email"
+            id={inputId}
+            data-testid={inputId}
             name={accessor}
             value={value}
             style={customStyle}
@@ -29,9 +35,11 @@ const Input = ({ accessor, label, type, value, onChange, customStyle, inline = f
     </>
 
     const renderPasswordInput = () => <>
-        {label && <label>{label}:</label>}
+        {label && <label htmlFor={inputId}>{label}:</label>}
         <input
             type="password"
+            id={inputId}
+            data-testid={inputId}
             name={accessor}
             value={value}
             style={customStyle}
@@ -40,9 +48,11 @@ const Input = ({ accessor, label, type, value, onChange, customStyle, inline = f
     </>
 
     const renderCheckInput = () => <>
-        {label && <label>{label}:</label>}
+        {label && <label htmlFor={inputId}>{label}:</label>}
         <input
             type="checkbox"
+            id={inputId}
+            data-testid={inputId}
             name={accessor}
             checked={value}
             style={customStyle}
@@ -52,12 +62,14 @@ const Input = ({ accessor, label, type, value, onChange, customStyle, inline = f
 
     const renderDropdownInput = () => (
         <>
-            {label && <label>{label}:</label>}
+            {label && <label htmlFor={inputId}>{label}:</label>}
             <select
+                id={inputId}
+                data-testid={inputId}
                 name={accessor}
                 value={value}
                 style={customStyle}
-                onChange={(e) => handleChange(e.target.value)}
+                onChange={handleChange}
             >
                 {options.map((option) => (
                     <option key={option.value} value={option.value}>{option.label}</option>

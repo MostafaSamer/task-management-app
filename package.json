@@ -25,6 +25,11 @@
     "storybook": "storybook dev -p 6000",
     "build-storybook": "storybook build"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "axios": "axios/dist/node/axios.cjs"
+    }
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
