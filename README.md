@@ -2,8 +2,6 @@
 
 This task is manly a frotend development with a fake API integration using JSON-SERVER
 
-Token, authrization, and all the Backend feature from validate existing email is not implemented but is doable
-
 
 ## how to run
 
