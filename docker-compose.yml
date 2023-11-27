@@ -17,3 +17,11 @@ services:
       - "5000:5000"
     volumes:
       - ./db.json:/usr/src/app/db.json
+  book-story:
+    build:
+      context: .
+      dockerfile: DockerfileStory
+    ports:
+      - "6002:6002"
+    volumes:
+      - ./src:/usr/src/app/src

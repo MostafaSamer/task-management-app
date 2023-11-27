@@ -22,7 +22,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "json-server --watch db.json --port 5000",
-    "storybook": "storybook dev -p 6000",
+    "storybook": "storybook dev -p 6002",
     "build-storybook": "storybook build"
   },
   "jest": {
