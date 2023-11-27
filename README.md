@@ -11,7 +11,7 @@ This project has its frontend and backend dockerizte so we can use docker or use
 
 - Docker
 
-make sure `docker` and `docker-compose` is installed and 3000, and 5000 ports is not alocated to a services or another project
+make sure `docker` and `docker-compose` is installed and 3000, 5000, and 6002 ports is not alocated to a services or another project
 
 run `docker-compose up`
 
@@ -43,7 +43,7 @@ run `docker-compose up`
 
 ## Documention
 
-Its not dockerized so we need to run `npm run storybook`
+Its dockerized but if want to run seperated we need to run `npm run storybook`
 
 ## Testes
 
