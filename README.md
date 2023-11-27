@@ -23,7 +23,7 @@ run `docker-compose up`
 
 4- Run `npm run server` to run ower fake API Client on port `5000`
 
-## Project Strucher
+## Project Structure
 
 - `__test__` for testing files
 - `assets` for assets
